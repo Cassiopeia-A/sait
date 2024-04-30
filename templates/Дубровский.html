@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+ <title>
+  Аудиоплеер
+ </title>
+ <link href="audio.css" rel="stylesheet"/>
+</head>
+<h1 id="title">
+ Дубровский
+</h1>
+<h2 id="number">
+ Часть 1
+</h2>
+<audio controls="" id="audioPlayer" src="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/01.mp3">
+</audio>
+<div id="playlist">
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/01.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/01.mp3', 'Часть 1', 0)">
+  Часть 1
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/02.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/02.mp3', 'Часть 2', 1)">
+  Часть 2
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/03.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/03.mp3', 'Часть 3', 2)">
+  Часть 3
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/04.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/04.mp3', 'Часть 4', 3)">
+  Часть 4
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/05.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/05.mp3', 'Часть 5', 4)">
+  Часть 5
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/06.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/06.mp3', 'Часть 6', 5)">
+  Часть 6
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/07.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/07.mp3', 'Часть 7', 6)">
+  Часть 7
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/08.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/08.mp3', 'Часть 8', 7)">
+  Часть 8
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/09.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/09.mp3', 'Часть 9', 8)">
+  Часть 9
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/10.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/10.mp3', 'Часть 10', 9)">
+  Часть 10
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/11.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/11.mp3', 'Часть 11', 10)">
+  Часть 11
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/12.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/12.mp3', 'Часть 12', 11)">
+  Часть 12
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/13.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/13.mp3', 'Часть 13', 12)">
+  Часть 13
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/14.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/14.mp3', 'Часть 14', 13)">
+  Часть 14
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/15.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/15.mp3', 'Часть 15', 14)">
+  Часть 15
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/16.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/16.mp3', 'Часть 16', 15)">
+  Часть 16
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/17.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/17.mp3', 'Часть 17', 16)">
+  Часть 17
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/18.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/18.mp3', 'Часть 18', 17)">
+  Часть 18
+ </button>
+ <button class="track" name="https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/19.mp3" onclick="changeTrack('https:\/\/s13.knigavuhe.org\/2\/audio\/12534\/19.mp3', 'Часть 19', 18)">
+  Часть 19
+ </button>
+</div>
+<div id="controls">
+ <button onclick="skip(-15)">
+  -15 сек
+ </button>
+ <button onclick="skip(15)">
+  +15 сек
+ </button>
+ <button onclick="changeSpeed(1)">
+  1x
+ </button>
+ <button onclick="changeSpeed(2)">
+  2x
+ </button>
+</div>
+<script src="audio.js">
+</script>
+{% endblock %}

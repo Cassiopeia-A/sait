@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+ <title>
+  Аудиоплеер
+ </title>
+ <link href="audio.css" rel="stylesheet"/>
+</head>
+<h1 id="title">
+ Мертвые души
+</h1>
+<h2 id="number">
+ Часть 1
+</h2>
+<audio controls="" id="audioPlayer" src="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-01.mp3?1">
+</audio>
+<div id="playlist">
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-01.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-01.mp3?1', 'Часть 1', 0)">
+  Часть 1
+ </button>
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-02.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-02.mp3?1', 'Часть 2', 1)">
+  Часть 2
+ </button>
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-03.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-03.mp3?1', 'Часть 3', 2)">
+  Часть 3
+ </button>
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-04.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-04.mp3?1', 'Часть 4', 3)">
+  Часть 4
+ </button>
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-05.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-05.mp3?1', 'Часть 5', 4)">
+  Часть 5
+ </button>
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-06.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-06.mp3?1', 'Часть 6', 5)">
+  Часть 6
+ </button>
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-07.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-07.mp3?1', 'Часть 7', 6)">
+  Часть 7
+ </button>
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-08.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-08.mp3?1', 'Часть 8', 7)">
+  Часть 8
+ </button>
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-09.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-09.mp3?1', 'Часть 9', 8)">
+  Часть 9
+ </button>
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-10.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-10.mp3?1', 'Часть 10', 9)">
+  Часть 10
+ </button>
+ <button class="track" name="https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-11.mp3?1" onclick="changeTrack('https:\/\/s7.knigavuhe.org\/2\/audio\/5964\/mertvye-dushi-11.mp3?1', 'Часть 11', 10)">
+  Часть 11
+ </button>
+</div>
+<div id="controls">
+ <button onclick="skip(-15)">
+  -15 сек
+ </button>
+ <button onclick="skip(15)">
+  +15 сек
+ </button>
+ <button onclick="changeSpeed(1)">
+  1x
+ </button>
+ <button onclick="changeSpeed(2)">
+  2x
+ </button>
+</div>
+<script src="audio.js">
+</script>
+{% endblock %}

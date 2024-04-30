@@ -16,3 +16,6 @@ class Books(SqlAlchemyBase):
     user_id = sqlalchemy.Column(sqlalchemy.Integer,
                                 sqlalchemy.ForeignKey("users.id"))
     user = orm.relationship('User')
+
+    def __repr__(self):
+        return f'Книга - {self.title}, пользователь - {self.user_id}'

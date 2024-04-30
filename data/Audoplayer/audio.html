@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аудиоплеер</title>
+  <link rel="stylesheet" href="audio.css">
+</head>
+<body>
+  <h1 id="number">Глава 1</h1>
+  <audio src="https://ia801608.us.archive.org/27/items/06-05_202303/06-01.mp3" id="audioPlayer" controls></audio>
+  <div id="playlist">
+    <button class="track" name="https://ia801608.us.archive.org/27/items/06-05_202303/06-01.mp3" onclick="changeTrack('https://ia801608.us.archive.org/27/items/06-05_202303/06-01.mp3', 'Глава 1', 0)">Глава 1</button>
+    <button class="track" name="https://ia801608.us.archive.org/27/items/06-05_202303/06-02.mp3" onclick="changeTrack('https://ia801608.us.archive.org/27/items/06-05_202303/06-02.mp3', 'Глава 2', 1)">Глава 2</button>
+    <button class="track" name="https://ia801608.us.archive.org/27/items/06-05_202303/06-03.mp3" onclick="changeTrack('https://ia801608.us.archive.org/27/items/06-05_202303/06-03.mp3', 'Глава 3', 2)">Глава 3</button>
+  </div>
+  <div id="controls">
+    <button onclick="skip(-15)">-15 сек</button>
+    <button onclick="skip(15)">+15 сек</button>
+    <button onclick="changeSpeed(1)">1x</button>
+    <button onclick="changeSpeed(2)">2x</button>
+  </div>
+  <script src="audio.js"></script>
+</body>
+</html>

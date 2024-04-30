@@ -3,8 +3,11 @@ from data import db_session
 from data.users import User
 from data.books import Books
 from forms.user import RegisterForm
-from flask_login import LoginManager, login_user, login_required, logout_user
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from forms.login import LoginForm
+from forms.search import SearchForm
+from data.parser import search
+from data.player import play
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -41,11 +44,42 @@ def logout():
     return redirect("/")
 
 
-@app.route("/")
+@app.route('/history')
+@login_required
+def history():
+    db_sess = db_session.create_session()
+    books = db_sess.query(Books).filter(Books.user == current_user)
+    return render_template('history.html', books=books)
+
+
+@app.route('/book/<book>', methods=['GET', 'POST'])
+def show_book(book):
+    return render_template(f'{book}.html')
+
+
+@app.route("/", methods=['GET', 'POST'])
 def index():
     db_sess = db_session.create_session()
-    books = db_sess.query(Books)
-    return render_template("index.html", books=books)
+    srch = SearchForm()
+    if srch.validate_on_submit():
+        search_msg = srch.name.data
+        files = search(search_msg)
+        play(files, search_msg)
+
+        flag = True
+        for bk in db_sess.query(Books).filter(Books.user == current_user):
+            if bk.title == search_msg:
+                flag = False
+
+        if flag:
+            bk = Books()
+            bk.title = search_msg
+            bk.user_id = int(current_user.id)
+            db_sess.add(bk)
+            db_sess.commit()
+
+        return redirect(f'/book/{search_msg}')
+    return render_template("index.html", form=srch)
 
 
 @app.route('/register', methods=['GET', 'POST'])

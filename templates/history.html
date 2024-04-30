@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Просмотренные книги</h1>
+<p>
+    {% for book in books %}
+    <a class="btn btn-secondary " href="/book/{{ book.title }}">{{ book.title }}</a>
+    {% endfor %}
+</p>
+{% endblock %}
