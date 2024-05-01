@@ -2,12 +2,11 @@ from flask import Flask, render_template, redirect
 from data import db_session
 from data.users import User
 from data.books import Books
+from forms.find import SearchForm
 from forms.user import RegisterForm
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from forms.login import LoginForm
-from forms.search import SearchForm
 from data.parser import search
-from data.player import play
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -54,17 +53,16 @@ def history():
 
 @app.route('/book/<book>', methods=['GET', 'POST'])
 def show_book(book):
-    return render_template(f'{book}.html')
+    files = search(book)
+    return render_template('player.html', files=files, name=book, n=len(files))
 
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
     db_sess = db_session.create_session()
-    srch = SearchForm()
-    if srch.validate_on_submit():
-        search_msg = srch.name.data
-        files = search(search_msg)
-        play(files, search_msg)
+    form = SearchForm()
+    if form.validate_on_submit():
+        search_msg = form.search.data
 
         flag = True
         for bk in db_sess.query(Books).filter(Books.user == current_user):
@@ -79,7 +77,7 @@ def index():
             db_sess.commit()
 
         return redirect(f'/book/{search_msg}')
-    return render_template("index.html", form=srch)
+    return render_template("index.html", forms=form)
 
 
 @app.route('/register', methods=['GET', 'POST'])

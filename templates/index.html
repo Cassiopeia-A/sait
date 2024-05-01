@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+</head>
 <h1>Поиск книг</h1>
-<form method="post">
-    {% for element in form %}
-        {{ element.label }} {{ element() }} <br>
-    {% endfor %}
-    <div>
-        {{ message }}
-    </div>
-</form>
+<div class="search_block">
+  <form action="" method="post">
+    {{ forms.hidden_tag() }}
+    {{ forms.search(class="search", type="text", placeholder="Поиск") }}
+    {{ forms.submit(class="submit", type="submit", value="") }}
+  </form>
+</div>
 {% endblock %}
